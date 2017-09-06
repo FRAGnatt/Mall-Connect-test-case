@@ -16,7 +16,7 @@ class DefaultController extends Controller
         $exercises = $exerciseHelper->getAllExercise();
         $sortingExercise = $exerciseHelper->sortExercisesByWeeks($exercises);
 
-        return $this->render('default/exercise-list.html.twig', [
+        return $this->render('AppBundle:Default:exercise-list.html.twig', [
             'exercisesByWeek' => $sortingExercise,
         ]);
     }
