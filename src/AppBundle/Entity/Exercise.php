@@ -78,10 +78,13 @@ class Exercise
 
     /**
      * @param string $shortDescription
+     * @return $this
      */
     public function setShortDescription($shortDescription)
     {
         $this->shortDescription = $shortDescription;
+
+        return $this;
     }
 
     /**
@@ -94,10 +97,13 @@ class Exercise
 
     /**
      * @param int $weight
+     * @return $this
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
+        return $this;
     }
 
     /**
@@ -110,10 +116,13 @@ class Exercise
 
     /**
      * @param int $countDone
+     * @return $this
      */
     public function setCountDone($countDone)
     {
         $this->countDone = $countDone;
+
+        return $this;
     }
 
     /**
@@ -126,10 +135,13 @@ class Exercise
 
     /**
      * @param \DateTime $date
+     * @return $this
      */
     public function setDate($date)
     {
         $this->date = $date;
+
+        return $this;
     }
 
     /**
@@ -142,12 +154,12 @@ class Exercise
 
     /**
      * @param \DateTime $time
+     * @return $this
      */
     public function setTime($time)
     {
         $this->time = $time;
+
+        return $this;
     }
-
-
-
 }

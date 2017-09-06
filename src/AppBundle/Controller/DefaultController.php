@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Services\ExerciseHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\Loader\ArrayLoader;
 
 class DefaultController extends Controller
 {
@@ -12,6 +14,9 @@ class DefaultController extends Controller
     {
         /** @var ExerciseHelper $exerciseHelper */
         $exerciseHelper = $this->get('app_bundle.exercise_helper');
+
+        /** @var Translator $translator */
+        $translator = $this->get('translator');
 
         $exercises = $exerciseHelper->getAllExercise();
         $sortingExercise = $exerciseHelper->sortExercisesByWeeks($exercises);

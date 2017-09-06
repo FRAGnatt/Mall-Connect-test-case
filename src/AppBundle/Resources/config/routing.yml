@@ -1,4 +1,8 @@
 app_bundle.exercises_list:
-    path:     /
-    defaults: { _controller: AppBundle:Default:index }
+    path:     /{_locale}/calendar
+    defaults: { _controller: AppBundle:Default:index, _locale: en }
     methods:  [GET]
+    requirements:
+        _locale: ru|en
+
+

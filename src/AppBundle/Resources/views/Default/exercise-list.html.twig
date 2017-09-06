@@ -26,15 +26,15 @@
 </style>
 {% endblock %}
 {% block body %}
-    <h2>Hi men</h2>
+    <h2>{% trans %}hi men{% endtrans %}</h2>
 
-    <div><b>Check what you did last 3 trainings</b></div>
+    <div><b>{% trans %}check last 3 trainings{% endtrans %}</b></div>
     <table class="mall-table">
 
         <tr>
             {% for weeksAgo, exercises in exercisesByWeek %}
                 {% if weeksAgo != 'moreThenTwoWeek' %}
-                        <th>{{ weeksAgo }}</th>
+                        <th>{{ weeksAgo | trans }}</th>
                 {% endif %}
             {% endfor %}
         </tr>
