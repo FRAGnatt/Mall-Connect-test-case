@@ -33,7 +33,7 @@ class Exercise
     /**
      * @var integer
      *
-     * @ORM\Column(type="decimal", scale="2")
+     * @ORM\Column(type="decimal", scale=2)
      */
     protected $weight;
 

@@ -1,0 +1,11 @@
+AppBundle\Entity\Exercise:
+    exercise_{1..10}:
+        #id: 1
+        shortDescription: <getExerciseDescription()>
+        #shortDescription: <getExerciseDescription()>
+        weight: <numberBetween(20,200)>
+        #weight: 100
+        countDone: <numberBetween(5,15)>
+        #countDone: 10
+        date: <dateTimeBetween("-20 days", "now")>
+        time: <datetimeBetween($date, "now")>
