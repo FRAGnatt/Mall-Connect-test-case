@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<style>
+    .mall-table {
+        width: 100%;
+        border: 1px double black; /* Рамка вокруг таблицы */
+        border-collapse: collapse; /* Отображать только одинарные линии */
+    }
+    .mall-table th {
+        border: 1px double black; /* Рамка вокруг таблицы */
+        border-collapse: collapse; /* Отображать только одинарные линии */
+    }
+    .mall-table td {
+        vertical-align: baseline;
+        border: 1px double black; /* Рамка вокруг таблицы */
+        border-collapse: collapse; /* Отображать только одинарные линии */
+    }
+    .mall-table .exercise {
+
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <h2>Hi men</h2>
+
+    <div><b>Check what you did last 3 trainings</b></div>
+    <table class="mall-table">
+
+        <tr>
+            {% for weeksAgo, exercises in exercisesByWeek %}
+                {% if weeksAgo != 'moreThenTwoWeek' %}
+                        <th>{{ weeksAgo }}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for weeksAgo, exercises in exercisesByWeek %}
+                {% if weeksAgo != 'moreThenTwoWeek' %}
+                    <td>
+                        {% for exercise in exercises %}
+                            <div class="exercise">
+                                <span class="exercise__description">{{ exercise.shortDescription }}</span>
+                                <span class="exercise__statistic">{{ exercise.weight }}kg X {{ exercise.countDone }}</span>
+                            </div>
+                        {% endfor %}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+
+
+        {#<tr></tr>#}
+        {#<tr></tr>#}
+        {#<tr></tr>#}
+    </table>
+
+{% endblock %}

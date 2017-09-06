@@ -1,5 +1,5 @@
 AppBundle\Entity\Exercise:
-    exercise_{1..300}:
+    exercise_{1..30}:
         #id: 1
         shortDescription: <getExerciseDescription()>
         #shortDescription: <getExerciseDescription()>
