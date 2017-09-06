@@ -1,5 +1,5 @@
 AppBundle\Entity\Exercise:
-    exercise_{1..10}:
+    exercise_{1..300}:
         #id: 1
         shortDescription: <getExerciseDescription()>
         #shortDescription: <getExerciseDescription()>
@@ -7,5 +7,5 @@ AppBundle\Entity\Exercise:
         #weight: 100
         countDone: <numberBetween(5,15)>
         #countDone: 10
-        date: <dateTimeBetween("-20 days", "now")>
+        date: <dateTimeBetween("-30 days", "now")>
         time: <datetimeBetween($date, "now")>
