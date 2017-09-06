@@ -3,12 +3,12 @@
 namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\Entity\Exercise;
+use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Nelmio\Alice\Fixtures;
 
-class LoadFixtures
+class FixtureLoader implements FixtureInterface
 {
-
     const EXERCISE_LIST = [
         'Exercise A',
         'Exercise B',
@@ -17,9 +17,9 @@ class LoadFixtures
 
     public function load(ObjectManager $manager)
     {
-        return Fixtures::load(__DIR__.'/fixtures.yml', $manager, ['providers' => [$this]]);
+        //Occam's razor don't need to create new provider in small project
+        Fixtures::load(__DIR__.'/fixtures.yml', $manager, ['providers' => [$this]]);
     }
-
 
     public function getExerciseDescription()
     {
