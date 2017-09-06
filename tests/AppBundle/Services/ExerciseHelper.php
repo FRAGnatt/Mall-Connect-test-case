@@ -16,7 +16,6 @@ class ExerciseHelper extends TestCase
             $this->createExercise(),
             $this->createExercise()
         ]);
-
     }
 
     /**

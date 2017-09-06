@@ -21,7 +21,6 @@ class ExerciseHelper
     }
 
     //todo I think that method not need to be at Helper. I think Controller need to call repository without service
-
     /**
      * @return Exercise[]
      */
@@ -66,8 +65,10 @@ class ExerciseHelper
         $today = new \DateTime(date('Y-m-d'));
         $oneWeekAgo = new \DateTime(date('Y-m-d', strtotime("-1 week")));
         $twoWeekAgo = new \DateTime(date('Y-m-d', strtotime("-2 week")));
+
         foreach ($exercises as $exercise) {
             $exerciseDate = $exercise->getDate();
+
             if ($exerciseDate == $today) {
                 $result['today'][] = $exercise;
             } elseif ($exerciseDate >= $oneWeekAgo && $exerciseDate < $today) {
@@ -80,7 +81,5 @@ class ExerciseHelper
         }
 
         return $result;
-
-
     }
 }

@@ -30,7 +30,6 @@
 
     <div><b>{% trans %}check last 3 trainings{% endtrans %}</b></div>
     <table class="mall-table">
-
         <tr>
             {% for weeksAgo, exercises in exercisesByWeek %}
                 {% if weeksAgo != 'moreThenTwoWeek' %}
@@ -52,11 +51,5 @@
                 {% endif %}
             {% endfor %}
         </tr>
-
-
-        {#<tr></tr>#}
-        {#<tr></tr>#}
-        {#<tr></tr>#}
     </table>
-
 {% endblock %}

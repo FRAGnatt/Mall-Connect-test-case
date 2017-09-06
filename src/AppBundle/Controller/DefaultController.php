@@ -15,9 +15,6 @@ class DefaultController extends Controller
         /** @var ExerciseHelper $exerciseHelper */
         $exerciseHelper = $this->get('app_bundle.exercise_helper');
 
-        /** @var Translator $translator */
-        $translator = $this->get('translator');
-
         $exercises = $exerciseHelper->getAllExercise();
         $sortingExercise = $exerciseHelper->sortExercisesByWeeks($exercises);
 
