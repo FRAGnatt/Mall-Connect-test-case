@@ -35,8 +35,9 @@ class ExerciseHelper extends TestCase
      */
     public function createRepositoryExerciseMock()
     {
-        $mock = $this->createMock(ObjectRepository::class)
-            ->method('findAll')
+        $mock = $this->createMock(ObjectRepository::class);
+
+        $mock->method('findAll')
             ->willReturn([
                 $this->createExercise(),
                 $this->createExercise()
@@ -56,9 +57,9 @@ class ExerciseHelper extends TestCase
     {
         return (new Exercise())
             ->setCountDone(10)
-            ->setDate(new \DateTime())
+            ->setDate(new \DateTime(date('Y-m-d',0)))
             ->setShortDescription('test A')
             ->setWeight(10)
-            ->setTime(new \DateTime());
+            ->setTime(new \DateTime(date('Y-m-d',0)));
     }
 }
