@@ -1,3 +1,11 @@
 services:
+    app_bundle.exercise_repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - AppBundle\Entity\Exercise
+
     app_bundle.exercise_helper:
         class: AppBundle\Services\ExerciseHelper
+        arguments:
+            - "@app_bundle.exercise_repository"

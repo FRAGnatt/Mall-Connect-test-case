@@ -2,11 +2,31 @@
 namespace AppBundle\Services;
 
 use AppBundle\Entity\Exercise;
+use Doctrine\Common\Persistence\ObjectRepository;
 
 class ExerciseHelper
 {
-    public function __construct()
+    /**
+     * @var ObjectRepository
+     */
+    private $exerciseRepository;
+
+    /**
+     * ExerciseHelper constructor.
+     * @param ObjectRepository $exerciseRepository
+     */
+    public function __construct(ObjectRepository $exerciseRepository)
     {
+        $this->exerciseRepository = $exerciseRepository;
+    }
+
+    //todo I think that method not need to be at Helper. I think Controller need to call repository without service
+
+    /**
+     * @return Exercise[]
+     */
+    public function getAllExercise() {
+        return $this->exerciseRepository->findAll();
     }
 
     /**
